@@ -1,5 +1,6 @@
 package com.Qpay.costumer.controller;
 
+import java.io.File;
 import java.security.Principal;
 
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,8 @@ public class MailController {
     @PostMapping("/file")
     public ResponseEntity<?> mailAttachFile(@RequestBody EmailRequest request) {
         System.out.println("Post___________");
+        File file = new File("/src/main/java/com/Qpay/costumer/files/Manchester_United_F.C.-Logo.wine.png"); // att
+        System.out.printf("Post___________", file);
         mailService.sendMimeMessageWithAttachments(request.getName(), request.getTo(), request.getBody());
         return ResponseEntity.ok().build();
     }

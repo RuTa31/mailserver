@@ -32,6 +32,8 @@ public class MailService implements MailRepository {
     public void sendSimpleMailMessage(String name, String to, String body) {
         System.out.println("server" + body);
         try {
+            // for (int i = 0; i < 5; i++) {
+            // System.out.println(i);
             SimpleMailMessage message = new SimpleMailMessage();
             message.setSubject(NEW_USER_ACCOUNT_VERIFICATION);
             message.setFrom(fromEmail);
@@ -39,6 +41,8 @@ public class MailService implements MailRepository {
             message.setText("hello this is my new mail....");
             emailSender.send(message);
             System.out.println("server" + message);
+            // }
+
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
             throw new RuntimeException(exception.getMessage());
@@ -57,6 +61,8 @@ public class MailService implements MailRepository {
             helper.setTo(to);
             helper.setText("--- this file ---", false);
             // Add attachments
+            File img1 = new File("/src/main/java/com/Qpay/costumer/files/Manchester_United_F.C.-Logo.wine.png"); // att
+
             FileSystemResource pdf = new FileSystemResource(
                     new File(
                             "/src/main/java/com/Qpay/costumer/files/keyboard-shortcuts-macos.pdf"));
@@ -64,7 +70,8 @@ public class MailService implements MailRepository {
             // new File(System.getProperty("user.home")
             // + "/src/main/java/com/Qpay/costumer/files/keyboard-shortcuts-macos.pdf"));
 
-            helper.addAttachment("newimage.pdf", pdf);
+            // helper.addAttachment("newimage.pdf", img1);
+            // helper.addAttachment("my image.jpg", img1);
             // helper.addAttachment(png.getFilename(), png);
             emailSender.send(message);
             System.out.println("server-------file" + message);
