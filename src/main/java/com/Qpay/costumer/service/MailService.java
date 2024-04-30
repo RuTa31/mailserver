@@ -30,7 +30,6 @@ public class MailService implements MailRepository {
 
     @Async
     public void sendSimpleMailMessage(String name, String to, String body) {
-        System.out.println("server" + body);
         try {
             // for (int i = 0; i < 5; i++) {
             // System.out.println(i);

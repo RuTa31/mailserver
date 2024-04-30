@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Qpay.costumer.dto.ChangePasswordRequest;
+import com.Qpay.costumer.dto.MeRequest;
 import com.Qpay.costumer.dto.UserResponse;
+import com.Qpay.costumer.model.User;
 import com.Qpay.costumer.service.UserService;
 
 import java.security.Principal;
@@ -28,6 +31,13 @@ public class UserController {
             @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize) {
 
         return ResponseEntity.ok(service.userAll(pageNo, pageSize));
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<User> authMe(
+            @RequestBody MeRequest request) {
+        System.out.println("------me -----" + request);
+        return ResponseEntity.ok(service.usersMe(request));
     }
 
     @PatchMapping("/change-password")

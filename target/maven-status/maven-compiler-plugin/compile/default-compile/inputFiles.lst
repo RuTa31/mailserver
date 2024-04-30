@@ -26,6 +26,7 @@
 /Users/ruta/Documents/java/mail_notifcation/mail_server/mailserver/src/main/java/com/Qpay/costumer/controller/UserController.java
 /Users/ruta/Documents/java/mail_notifcation/mail_server/mailserver/src/main/java/com/Qpay/costumer/constant/Permission.java
 /Users/ruta/Documents/java/mail_notifcation/mail_server/mailserver/src/main/java/com/Qpay/costumer/config/JwtAuthenticationFilter.java
+/Users/ruta/Documents/java/mail_notifcation/mail_server/mailserver/src/main/java/com/Qpay/costumer/dto/MeRequest.java
 /Users/ruta/Documents/java/mail_notifcation/mail_server/mailserver/src/main/java/com/Qpay/costumer/controller/AuthenticationController.java
 /Users/ruta/Documents/java/mail_notifcation/mail_server/mailserver/src/main/java/com/Qpay/costumer/util/WebUtils.java
 /Users/ruta/Documents/java/mail_notifcation/mail_server/mailserver/src/main/java/com/Qpay/costumer/controller/DemoController.java

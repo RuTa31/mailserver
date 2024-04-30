@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Qpay.costumer.dto.AuthenticationRequest;
 import com.Qpay.costumer.dto.AuthenticationResponse;
+import com.Qpay.costumer.dto.MeRequest;
 import com.Qpay.costumer.dto.RegisterRequest;
+import com.Qpay.costumer.model.User;
 import com.Qpay.costumer.service.AuthenticationService;
 
 import java.io.IOException;
@@ -34,6 +36,12 @@ public class AuthenticationController {
             @RequestBody AuthenticationRequest request) {
         return ResponseEntity.ok(service.authenticate(request));
     }
+
+    // @PostMapping("/me")
+    // public ResponseEntity<ResponseEntity<User>> authMe(
+    // @RequestBody MeRequest request) {
+    // return ResponseEntity.ok(service.authMe(request));
+    // }
 
     @PostMapping("/refresh-token")
     public void refreshToken(

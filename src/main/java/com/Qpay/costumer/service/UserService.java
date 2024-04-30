@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.Qpay.costumer.dto.ChangePasswordRequest;
+import com.Qpay.costumer.dto.MeRequest;
 import com.Qpay.costumer.dto.UserDto;
 import com.Qpay.costumer.dto.UserResponse;
 import com.Qpay.costumer.model.User;
@@ -68,6 +69,12 @@ public class UserService {
         userDto.setRole(user.getRole());
 
         return userDto;
+    }
+
+    public User usersMe(MeRequest request) {
+        var user = repository.findByEmail(request.getEmail())
+                .orElseThrow();
+        return user;
     }
 
 }
